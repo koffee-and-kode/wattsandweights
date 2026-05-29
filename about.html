@@ -1,0 +1,60 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<article class="about">
+  <header class="about-header">
+    <h1>About</h1>
+    <p class="about-tagline">Endurance cycling, strength training, running, and the games in between — logged honestly, one session at a time.</p>
+  </header>
+
+  <section class="about-section">
+    <h2>Where I am right now</h2>
+    <ul class="about-now-links">
+      <li><a href="{{ '/now/' | relative_url }}"><strong>Now</strong></a> — the series I'm actively in the middle of (Road to ELO 1500, Road to 6-Pack Abs).</li>
+      <li><a href="{{ '/impossible-list/' | relative_url }}"><strong>Impossible list</strong></a> — the longer list of goals worth chasing.</li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>On the bike</h2>
+    <ul>
+      <li>Telangana State Champion — <strong>2023</strong> and <strong>2025</strong>.</li>
+      <li>Long-distance riding and brevets — the longer the better.</li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>Off the bike</h2>
+    <ul>
+      <li>Strength work in the gym — programming, lifts, recovery.</li>
+      <li>Obstacle course racing — Devils Circuit and similar events.</li>
+      <li>Casual badminton, frisbee, and chess.</li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>What I write about here</h2>
+    <ul>
+      <li><strong>Cycling</strong> — endurance, brevets, base miles, pro-cycling explainers</li>
+      <li><strong>Strength</strong> — programming blocks, lifts, recovery</li>
+      <li><strong>Running</strong> — mileage, workouts, OCR, trail</li>
+      <li><strong>Race reports</strong> — what worked, what didn't, what I'd change</li>
+      <li><strong>Books</strong> — notes on training, racing, and the mental side of sport</li>
+      <li><strong>Chess &amp; badminton</strong> — the smaller habits that round out the week</li>
+    </ul>
+  </section>
+
+  <footer class="about-links">
+    <span>Find me on</span>
+    {% if site.social.github %}
+    <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+    {% endif %}
+    {% if site.social.linkedin %}
+    <span class="sep">·</span>
+    <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    {% endif %}
+  </footer>
+</article>

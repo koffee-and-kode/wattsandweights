@@ -1,0 +1,75 @@
+---
+layout: default
+title: Home
+---
+
+{% assign cycling_count = site.posts | where_exp: "p", "p.path contains '_posts/cycling/'" | size %}
+{% assign running_count = site.posts | where_exp: "p", "p.path contains '_posts/running/'" | size %}
+{% assign strength_count = site.posts | where_exp: "p", "p.path contains '_posts/strength/'" | size %}
+{% assign race_count = site.posts | where_exp: "p", "p.path contains '_posts/race-reports/'" | size %}
+{% assign books_count = site.posts | where_exp: "p", "p.path contains '_posts/books/'" | size %}
+{% assign chess_count = site.posts | where_exp: "p", "p.path contains '_posts/chess/'" | size %}
+{% assign badminton_count = site.posts | where_exp: "p", "p.path contains '_posts/badminton/'" | size %}
+
+<section class="home-hero">
+  <h1>Debugging Fitness</h1>
+  <p class="home-tagline">A personal journal — endurance cycling, strength training, running, chess, badminton, and the occasional race report.</p>
+</section>
+
+<section class="section-tiles">
+  <a class="section-tile" href="{{ '/cycling/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Cycling</h2>
+      <span class="section-tile-count">{{ cycling_count }}</span>
+    </div>
+    <p class="section-tile-desc">Endurance, brevets, base miles, and pro-cycling explainers — plus guides for riding in Hyderabad.</p>
+  </a>
+
+  <a class="section-tile" href="{{ '/running/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Running</h2>
+      <span class="section-tile-count">{{ running_count }}</span>
+    </div>
+    <p class="section-tile-desc">Mileage, workouts, and the occasional OCR or trail.</p>
+  </a>
+
+  <a class="section-tile" href="{{ '/strength/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Strength</h2>
+      <span class="section-tile-count">{{ strength_count }}</span>
+    </div>
+    <p class="section-tile-desc">Programming, lifts, recovery, and gym notes.</p>
+  </a>
+
+  <a class="section-tile" href="{{ '/race-reports/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Race Reports</h2>
+      <span class="section-tile-count">{{ race_count }}</span>
+    </div>
+    <p class="section-tile-desc">Debriefs from races and events — bike, run, OCR.</p>
+  </a>
+
+  <a class="section-tile" href="{{ '/books/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Books</h2>
+      <span class="section-tile-count">{{ books_count }}</span>
+    </div>
+    <p class="section-tile-desc">Reading notes — training, racing, recovery, and the mental side of sport.</p>
+  </a>
+
+  <a class="section-tile" href="{{ '/chess/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Chess</h2>
+      <span class="section-tile-count">{{ chess_count }}</span>
+    </div>
+    <p class="section-tile-desc">Openings, middlegame ideas, endgames, and games I've played.</p>
+  </a>
+
+  <a class="section-tile" href="{{ '/badminton/' | relative_url }}">
+    <div class="section-tile-head">
+      <h2>Badminton</h2>
+      <span class="section-tile-count">{{ badminton_count }}</span>
+    </div>
+    <p class="section-tile-desc">Grips, footwork, strokes, and casual match notes.</p>
+  </a>
+</section>

@@ -1,0 +1,42 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Personal scratch / drafts (not for public repo)
+toDo.md
+whatNext.md
+*.scratch.md
+.scratch/
+
+# Claude skill local state (venvs, analysis caches)
+.claude/skills/*/.venv/
+_posts/chess/games/*.analysis.json

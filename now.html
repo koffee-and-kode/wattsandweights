@@ -1,0 +1,35 @@
+---
+layout: default
+title: Now
+permalink: /now/
+---
+
+{% assign chess_series = site.posts | where_exp: "p", "p.tags contains 'road-to-1500'" | sort: "date" | reverse %}
+{% assign strength_series = site.posts | where_exp: "p", "p.tags contains 'road-to-6-pack'" | sort: "date" | reverse %}
+{% assign all_series = chess_series | concat: strength_series | sort: "date" | reverse %}
+
+<section class="home-hero">
+  <h1>Now</h1>
+  <p class="home-tagline">The series I'm actively in the middle of — live, dated, and updated as I go.</p>
+  {% if all_series.size > 0 %}
+  <p class="now-updated">Updated {{ all_series.first.date | date: "%B %-d, %Y" }}</p>
+  {% endif %}
+</section>
+
+<section class="section-tiles">
+  <a class="section-tile" href="{% if chess_series.size > 0 %}{{ chess_series.first.url | relative_url }}{% else %}{{ '/chess/' | relative_url }}{% endif %}">
+    <div class="section-tile-head">
+      <h2>Road to ELO 1500</h2>
+      <span class="section-tile-count">{{ chess_series.size }}</span>
+    </div>
+    <p class="section-tile-desc">Climbing back up the chess.com rapid ladder — currently 771, peak 1327, long-term goal 1500.</p>
+  </a>
+
+  <a class="section-tile" href="{% if strength_series.size > 0 %}{{ strength_series.first.url | relative_url }}{% else %}{{ '/strength/' | relative_url }}{% endif %}">
+    <div class="section-tile-head">
+      <h2>Road to 6-Pack Abs</h2>
+      <span class="section-tile-count">{{ strength_series.size }}</span>
+    </div>
+    <p class="section-tile-desc">Body-composition series — sub-75 kg and visible abs by my 30th birthday on Dec 16, 2026.</p>
+  </a>
+</section>

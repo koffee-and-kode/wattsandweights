@@ -1,0 +1,40 @@
+---
+layout: default
+title: Books
+permalink: /books/
+---
+
+<div class="section-page">
+  <h1>Books</h1>
+  <p class="page-description">Reading notes — training, racing, recovery, and the mental side of sport.</p>
+
+  {% assign entries = site.posts | where_exp: "p", "p.path contains '_posts/books/'" | sort: "date" | reverse %}
+  {% if entries.size == 0 %}
+  <p class="empty-state">No entries yet — first one coming soon.</p>
+  {% else %}
+  <ul class="entry-list">
+    {% for entry in entries %}
+    <li class="entry-item">
+      <article>
+        <h2>
+          <a class="entry-link" href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
+        </h2>
+        {% if entry.date %}
+        <div class="entry-meta">{{ entry.date | date: "%b %-d, %Y" }}</div>
+        {% endif %}
+        {% if entry.excerpt %}
+        <p class="entry-excerpt">{{ entry.excerpt | strip_html | truncatewords: 50 }}</p>
+        {% endif %}
+        {% if entry.tags %}
+        <div class="post-tags">
+          {% for tag in entry.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>

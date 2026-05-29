@@ -1,0 +1,67 @@
+# Site Settings
+title: Debugging Fitness
+description: A personal journal — endurance cycling, strength training, running, chess, badminton, and race reports.
+author: Gautham Reddy Surakanti
+url: https://debuggingfitness.com
+baseurl: "" # Custom domain serves at root; no path prefix needed
+
+# GitHub Pages Settings
+github_username: koffee-and-kode
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:slug/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - dev/
+  - scripts/
+  - .claude/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Race Reports
+    url: /race-reports/
+  - title: Guides
+    url: /guides/
+  - title: Resources
+    url: /resources/
+  - title: About
+    url: /about/
+
+# Kramdown settings for code highlighting
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Social Links
+social:
+  github: koffee-and-kode
+  twitter: ""
+  linkedin: "gauthamsurakanti"
